@@ -1,0 +1,389 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin-top: 25px;
+    overflow-x: hidden;
+}
+/* navbar */
+
+.navbar .nav a{
+    font-size: 1.8rem;
+}
+
+.jumbotron{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("img/work.jpg!d");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 600px;
+    overflow: hidden;
+}
+
+.jumbotron .gambar img{
+    width: 250px;
+    height: 250px;
+    border: 6px solid #d9e0ff;
+    box-shadow: 2px 2px 10px 2px #000e8b5e;
+} 
+
+.jumbotron h1, .jumbotron p{
+    color: whitesmoke;
+    text-shadow: 2px 2px 10px black;
+}
+.jumbotron p{
+    margin: 20px 0;
+}
+.jumbotron .arrow a{
+    border-radius: 50%;
+    position: relative;
+}
+
+.jumbotron .arrow img{
+    width: 50px;
+    filter: drop-shadow(0 0 2px white)
+    drop-shadow(0 0 10px rgb(255, 255, 255));
+    animation: swings 1.5s ease-in-out infinite alternate;
+    position: absolute;
+    left: -25px;
+}
+
+/* about */
+hr{
+    width: 25%;
+    height: 3px;
+    background-color: #333;
+    margin: 10px auto 25px;
+}
+
+.section{
+    min-height: 600px;
+}
+
+.col-sm-5 p{
+    font-size: 2.2rem;
+}
+
+/* about extension */
+.par1, .par2{
+    opacity: 0;
+    transition: .5s;
+}
+
+.par1{
+    transform-origin: right;
+    transform: translate(-200px, 0) rotate(15deg);
+}
+
+.par2{
+    transform-origin: left;
+    transform: translate(200px, 0) rotate(-15deg);
+}
+
+.par1.par-ext, .par2.par-ext{
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+}
+
+p.par1, .par2 p{
+    text-align: justify;
+}
+
+.indent{
+    text-indent: 2.5rem;
+}
+
+/* portfolio */
+.portfolio{
+    background-color: rgb(233, 232, 253);
+    margin: 50px 0;
+    box-shadow: 0 0 50px 50px rgb(233, 232, 253);
+}
+
+.portfolio .no-margin{
+    margin-top: 0;
+}
+
+.portfolio .thumbnail:hover{
+    transform: scale(1.05);
+}
+
+
+.portfolio .thumbnail{
+    transition: .5s;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.thumbnail.thumb-ext{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio .col-sm-4 .img-backup a{
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.portfolio .col-sm-4 .img-backup:hover p{
+    transform: scale(1) rotate(360deg);
+}
+
+.portfolio img, .portfolio .col-sm-4 p{
+    border-radius: 10px;
+}
+
+
+.portfolio .col-sm-4 a{
+    position: relative;
+    text-decoration: none;
+}
+
+
+.portfolio .col-sm-4 p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.192);
+    color: #d9e0ff;
+    font-size: 3rem;
+    transition: .3s;
+    transform: scale(0);
+    text-shadow: 2px 2px 5px black;
+}
+
+
+/* contact */
+.form-control::placeholder{
+    color: rgb(196, 191, 216);
+}
+
+.section.contact{
+    min-height: 500px;
+    margin-top: 100px;
+}
+
+
+/* footer */
+.footer{
+    background-color: rgb(233, 232, 253);
+    color: white;
+    padding: 10px 0 40px;
+    box-shadow: 0 0 50px 50px rgb(233, 232, 253);
+}
+
+.footer h4 i{
+    color: tomato;
+}
+.footer h4{
+    color: rgb(58, 50, 107);
+}
+
+.footer h4 a{
+    text-decoration: none;
+}
+
+.footer .social a img{
+    width: 40px;
+    margin: 5px 5px 0;
+}
+
+
+/* Overlay Breakpoint */
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.overlay:target{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.712);
+    transition: .5s;
+}
+
+.overlay:target .nav-arrow img{
+    animation: fade .5s ease-in-out .5s forwards;
+}
+
+
+.overlay:target .content a{
+    animation: slight-down .5s ease-out .5s forwards;
+}
+
+.overlay .content{
+    height: 100%;
+    width: 73%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+}
+
+.overlay .content.blueprint{
+    width: 40%;
+}
+
+.overlay .content.exercise{
+    width: 80%;
+}
+
+.overlay .content.exercise3{
+    width: 50%;
+}
+
+.overlay .content.exercise4{
+    width: 60%;
+}
+
+.overlay .content.quiz{
+    width: 45%;
+}
+
+
+.overlay .content a.page-port.reference {
+    font-size: 2.5rem;
+}
+
+.overlay .content a{
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    opacity: 0;
+}
+
+.overlay .content a span{
+    transition: .3s;
+}
+
+.overlay .content a:hover, .overlay .content a:hover span{
+    font-size: 1.7rem;
+    text-shadow: 0px 0px 5px white;
+    transform: scale(1.2);
+    color: white;
+}
+
+.overlay .nav-arrow img{
+    filter: drop-shadow(0 0 10px rgb(168, 92, 255))
+    drop-shadow(0 0 15px rgb(239, 233, 255));
+    transition: .3s;
+    opacity: 0;
+}
+
+
+.nav-arrow.left img:hover{
+    transform: translateX(-10px) scale(1.05);
+}
+
+.nav-arrow.right img:hover{
+    transform: translateX(10px) scale(1.05);    
+}
+
+.overlay .content span{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image: radial-gradient(at top right, rgb(169, 132, 255), rgb(239, 220, 255));
+}
+
+.overlay:target .content .full-img-backup{
+    animation: fadeAndZoom .9s cubic-bezier(0, 0, 0.18, 0.99) .1s forwards;
+}
+
+.overlay .content .full-img-backup{
+    width: 90%;
+    height: 85%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay .content .full-img-backup.blueprint, .overlay .content .full-img-backup.quiz{
+    height: 90%;
+}
+
+.overlay .content img{
+    height: 93%;
+    width: 100%;
+    box-shadow: 2px 2px 15px rgb(207, 189, 255), 4px 4px 20px rgb(237, 222, 255);
+    transition: .3s;
+}
+
+.overlay .content img:hover{
+    transform: scale(1.03);
+}
+
+
+
+/* animation breakpoint */
+@keyframes swings {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 20px;
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeAndZoom {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes slight-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
