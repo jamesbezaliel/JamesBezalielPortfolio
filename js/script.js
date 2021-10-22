@@ -22,12 +22,6 @@ $('.page-home').on('click', function(){
     }, 1000, 'easeInOutCubic')
 })
 
-// parallax
-// about
-// standard version
-// $(window).on('load', function(){
-//     $('.par1, .par2').addClass('par-ext')
-// })
 
 $(window).scroll(function(){
     let wScroll = $(this).scrollTop();
@@ -36,14 +30,26 @@ $(window).scroll(function(){
     $('.jumbotron .gambar img').css({
         'transform': 'translate(0, '+ wScroll/4 +'%)'
     })
-
-    $('.jumbotron h1, .jumbotron .arrow img').css({
+    
+    $('.jumbotron h1').css({
         'transform': 'translate(0, '+ wScroll/2 +'%)'
     })
 
     $('.jumbotron p').css({
         'transform': 'translate(0, '+ wScroll +'%)'
     })
+
+    $('.jumbotron .arrow img').css({
+        'transform': 'translate(0, '+ wScroll/4 +'%)'
+    })
+
+    if(wScroll > 0){
+        $('.jumbotron a.cv').addClass('cv-ext');
+    }
+
+    else if(wScroll == 0){
+        $('.jumbotron a.cv').removeClass('cv-ext');
+    }
 
     // about
     if(wScroll > $('.about').offset().top - 250){
